@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/speedpwn'
+
+Slop.parse do
+  banner      'Usage: speedpwn [IDENTIFIER] [OPTIONS]'
+  description 'Generates a list of possible default SpeedTouch passwords'
+
+  separator "\nOptions:\n"
+
+  on :h, :help, 'Shows this help message' do
+    abort self.to_s
+  end
+
+  on :v, :version, 'Shows the current version' do
+    abort "speedpwn v#{SpeedPwn::VERSION} on #{RUBY_DESCRIPTION}"
+  end
+
+  run do |opts, args|
+    identifier = args[0]
+
+    if !identifier or identifier.length != 6
+      abort <<-EOF.strip
+You must specify the 6 character identifier of the SpeedTouch SSID. Typically
+the SSID is in the format of SpeedTouchXXXXXX/ThomsonXXXXXX where XXXXXX is the
+identifier you need to specify.
+      EOF
+    end
+
+    puts 'Generating passwords, this will take a while...'
+    puts
+
+    generator = SpeedPwn::Generator.new(identifier)
+    progress  = ProgressBar.new(generator.size)
+
+    generator.finish_batch do |amount|
+      progress.increment!(amount)
+    end
+
+    passwords = generator.generate.sort
+
+    puts
+    puts
+
+    if passwords.empty?
+      puts 'No passwords found, sorry :<'
+    else
+      puts 'Found the following possible passwords:'
+      puts "  * " + passwords.join("\n  * ")
+    end
+  end
+end
