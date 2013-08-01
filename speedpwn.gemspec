@@ -3,8 +3,8 @@ require File.expand_path('../lib/speedpwn/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name        = 'speedpwn'
   gem.version     = SpeedPwn::VERSION
-  gem.authors     = ['Yorick Peterse']
-  gem.emails      = ['yorickpeterse@gmail.com']
+  gem.author      = 'Yorick Peterse'
+  gem.email       = 'yorickpeterse@gmail.com'
   gem.summary     = 'Generates possible passwords for SpeedTouch/Thomson routers.'
   gem.description = gem.summary
   gem.executables = ['speedpwn']
