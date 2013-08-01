@@ -1,0 +1,14 @@
+.gitignore
+Gemfile
+LICENSE
+MANIFEST
+README.md
+Rakefile
+bin/speedpwn
+lib/speedpwn.rb
+lib/speedpwn/generator.rb
+lib/speedpwn/version.rb
+nostalgia/speedpwn.py
+speedpwn.gemspec
+task/manifest.rake
+task/tag.rake
