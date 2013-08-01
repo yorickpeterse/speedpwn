@@ -5,12 +5,12 @@ for SpeedTouch/Thomson routers. BT Home hubs are not supported because they're
 not used here in The Netherlands.
 
 Originally I wrote a Python script (which can be found in
-`nostalgia/speedpwn.py`) some time back in early 2009 to do this and I've used
-it over the years. After using it for almost 4 years I decided it was time I'd
-rewrite it in a decent way.
+`nostalgia/speedpwn.py`) back in early 2009 to do this and I've used it over
+the years. After using it for almost 4 years I decided it was time I'd rewrite
+it in a decent way.
 
 The algorithm used itself is nothing new and has been around since 2008. More
-information about this can be found on the following webpages:
+information about this can be found on the following web pages:
 
 * <http://www.gnucitizen.org/blog/default-key-algorithm-in-thomson-and-bt-home-hub-routers/>
 * <http://www.mentalpitstop.com/touchspeedcalc/calculate_speedtouch_default_wep_wpa_wpa2_password_by_ssid.html>
